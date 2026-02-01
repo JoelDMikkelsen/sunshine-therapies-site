@@ -48,8 +48,9 @@
      Netlify scans for forms with data-netlify="true" at deploy time.
      This hidden form declares the fields so Netlify registers them.
      The visible form below submits via AJAX to the same endpoint. -->
-<form class="netlify-hidden" data-netlify="true" name="contact" action="/" method="POST">
+<form class="netlify-hidden" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" action="/" method="POST">
   <input type="hidden" name="form-name" value="contact">
+  <input type="text" name="bot-field">
   <input type="text" name="name">
   <input type="email" name="email">
   <select name="serviceInterest">
@@ -80,7 +81,7 @@
       <div id="formStatus" class="form-status"></div>
 
       <!-- Visible form — submitted via AJAX in script.js -->
-      <form id="contactForm" class="cform" action="/" method="POST" novalidate>
+      <form id="contactForm" class="cform" action="/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" novalidate>
         <input type="hidden" name="form-name" value="contact">
 
         <!-- Honeypot field — spam trap -->
