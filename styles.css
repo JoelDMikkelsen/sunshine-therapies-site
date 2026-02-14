@@ -566,6 +566,17 @@ h4 { font-size: 1.25rem; }
 .svc-img-sage { background: linear-gradient(145deg, #EBF0EB, #DFE9DF); }
 .svc-img-warm { background: linear-gradient(145deg, #F5F0E5, #EBE4D5); }
 
+/* When .svc-img is an actual img element */
+img.svc-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+
 .svc-text h2 { margin-bottom: .4rem; }
 .price-tag { display: inline-block; color: var(--gold); font-family: var(--font-display); font-size: 1.25rem; margin-bottom: .8rem; }
 .svc-text p { color: var(--text-secondary); font-size: .9rem; line-height: 1.88; margin-bottom: .8rem; }
