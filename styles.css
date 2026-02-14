@@ -453,6 +453,9 @@ h4 { font-size: 1.25rem; }
   box-shadow: var(--shadow-sm);
   transition: all var(--t);
   position: relative; overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .svc-card::before {
   content: '';
@@ -485,13 +488,14 @@ h4 { font-size: 1.25rem; }
 .ico-plum { background: linear-gradient(135deg, #F2E8ED, #E5D5DE); }
 
 .svc-card h3 { font-size: 1.35rem; margin-bottom: .5rem; }
-.svc-card p { color: var(--text-secondary); font-size: .85rem; line-height: 1.75; margin-bottom: 1rem; }
+.svc-card p { color: var(--text-secondary); font-size: .85rem; line-height: 1.75; margin-bottom: 1rem; flex-grow: 1; }
 .card-link {
   font-size: .72rem; font-weight: 700;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--gold);
   display: inline-flex; align-items: center; gap: .35rem;
   transition: gap var(--t);
+  margin-top: auto;
 }
 .card-link:hover { gap: .6rem; color: var(--gold); }
 
@@ -1014,10 +1018,36 @@ img.svc-img {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: .4rem; text-align: center; }
   .intro-badge { position: relative; bottom: auto; right: auto; margin-top: 1rem; }
+  .testimonial-badge { position: relative; bottom: auto; right: auto; margin-top: 1rem; }
+
+  /* Reduce padding on mobile */
+  .intro-section, .testimonials-section { padding: 4rem 0; }
+  .cta-section { padding: 4rem 0; }
+
+  /* Contact page image sizing */
+  .contact-profile-img { margin: 1rem 0 1.5rem; }
 }
 
 @media (max-width: 480px) {
   .page-hero { padding-top: 7.5rem; padding-bottom: 3rem; }
   .hero-card { padding: 1.8rem; }
   .floating-cta { bottom: 1.2rem; right: 1.2rem; }
+
+  /* Typography adjustments */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+
+  /* Service cards */
+  .svc-card { padding: 1.8rem 1.5rem; }
+
+  /* Testimonials */
+  .testimonial-card { padding: 1.5rem 1.3rem; }
+  .testimonials-section { padding: 3rem 0; }
+
+  /* Hero sections */
+  .hero-content { padding-top: 6rem; padding-bottom: 3rem; }
+  .page-hero-enhanced { padding: 6rem 0 4rem; }
+
+  /* Contact info */
+  .contact-info { padding-top: 1.5rem; }
 }
