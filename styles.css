@@ -630,10 +630,15 @@ img.svc-img {
 
 .evt-img {
   width: 100%; aspect-ratio: 16/9;
-  position: relative;
+  position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; gap: .6rem;
   color: var(--text-light);
+}
+.evt-img > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .evt-img-1 { background: linear-gradient(145deg, #F5F0E5, #EBE4D5); }
 .evt-img-2 { background: linear-gradient(145deg, var(--plum-mid), #4A3545); }
@@ -661,6 +666,7 @@ img.svc-img {
   margin-bottom: .7rem; align-self: flex-start;
 }
 .evt-tag.tag-new { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white); }
+.evt-tag.tag-weekly { background: linear-gradient(135deg, var(--sage-pale), #D4ECD4); color: var(--sage); }
 .evt-body h3 { font-size: 1.25rem; margin-bottom: .45rem; }
 .evt-meta { display: flex; flex-direction: column; gap: .28rem; margin-bottom: .8rem; }
 .evt-meta span { font-size: .77rem; color: var(--text-secondary); display: flex; align-items: center; gap: .38rem; }
