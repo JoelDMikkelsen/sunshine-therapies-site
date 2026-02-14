@@ -129,7 +129,7 @@ h4 { font-size: 1.25rem; }
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 1000;
+  z-index: 10000;
   padding: 1.6rem 0;
   transition: all var(--t-slow);
 }
@@ -1001,11 +1001,11 @@ img.svc-img {
     background: var(--cream);
     flex-direction: column;
     align-items: center; justify-content: center;
-    gap: 2rem; z-index: 999;
+    gap: 2rem; z-index: 9999;
   }
   .nav-links.open { display: flex; }
   .nav-links .nav-link { color: var(--charcoal); font-size: .9rem; }
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex; z-index: 10000; }
   .nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav-hamburger.active span:nth-child(2) { opacity: 0; }
   .nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }

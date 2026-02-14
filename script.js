@@ -14,9 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Mobile hamburger --- */
   if (hamburger) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('open');
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
   }
   // Close mobile nav on link click
@@ -25,7 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         if (hamburger) hamburger.classList.remove('active');
         navLinks.classList.remove('open');
+        document.body.style.overflow = '';
       });
+    });
+
+    // Close menu when clicking outside
+    navLinks.addEventListener('click', (e) => {
+      if (e.target === navLinks) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
     });
   }
 
