@@ -997,7 +997,9 @@ img.svc-img {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-    position: fixed; inset: 0;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
     background: var(--cream);
     flex-direction: column;
     align-items: center; justify-content: center;
@@ -1006,6 +1008,7 @@ img.svc-img {
   .nav-links.open { display: flex; }
   .nav-links .nav-link { color: var(--charcoal); font-size: .9rem; }
   .nav-hamburger { display: flex; z-index: 10000; }
+  .nav-hamburger.active span { background: var(--charcoal); }
   .nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav-hamburger.active span:nth-child(2) { opacity: 0; }
   .nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
