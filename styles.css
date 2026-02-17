@@ -761,6 +761,25 @@ img.svc-img {
   margin-bottom: 1.2rem;
   font-style: italic;
 }
+/* Expandable testimonial */
+.testimonial-expandable .testimonial-full { display: none; }
+.testimonial-expandable .testimonial-preview { display: block; }
+.testimonial-expandable.expanded .testimonial-full { display: block; }
+.testimonial-expandable.expanded .testimonial-preview { display: none; }
+.testimonial-toggle {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1rem;
+  transition: color .2s ease;
+}
+.testimonial-toggle:hover { color: var(--gold-dark); }
+
 .testimonial-author strong {
   display: block;
   font-size: .88rem;

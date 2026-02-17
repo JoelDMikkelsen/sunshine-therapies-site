@@ -79,6 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealEls.forEach(el => revealIO.observe(el));
 
+  /* --- Expandable testimonials --- */
+  document.querySelectorAll('.testimonial-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.testimonial-expandable');
+      const expanded = card.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded);
+      btn.textContent = expanded ? 'Read less' : 'Read more';
+    });
+  });
+
   /* --- Dynamic pet name field (contact page) --- */
   const serviceSelect = document.getElementById('serviceInterest');
   const petFieldWrap = document.getElementById('petFieldWrap');
